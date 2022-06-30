@@ -11,6 +11,13 @@ Here, we use the resnet18 model for our CNN encoder part. <br>
 ## Data
 We use the [Flickr Image dataset](https://www.kaggle.com/datasets/hsankesara/flickr-image-dataset) from kaggle, with a total of 31.8k images and corresbonding human annotated captions.
 ## Model and Notebook
+We follow these steps to create our final model: <br>
+1. Tokenizing the captions. We use spacy here.
+2. Image Augmentation
+3. Processed Image as input for CNN (Resnet-18)
+4. CNN -> LSTM
+5. Use output from LSTM to generate result captions<br>
+link to the notebook here~~~~~
 ## Result
 <img width="415" alt="result" src="https://user-images.githubusercontent.com/86633319/176597505-51d736b5-db9e-48c7-a112-710e64f5d18f.png"> <br>
 > Average Log Loss: 3.3332 after a few epochs

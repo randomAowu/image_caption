@@ -41,7 +41,7 @@ Some other implementions using captions could be:<br>
 - Given a sentence/query, find out the matching images.
 - Object detection
 ## Slides
-Our [Slides]() for the final presentation
+Our [Slides](https://github.com/ChenjiaGUO/image_caption/blob/main/DL-Final%20presentation.pdf) for the final presentation
 
 ## Requirements
 Python==3.7.13  

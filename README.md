@@ -18,7 +18,9 @@ We followed these steps to create our final model: <br>
 3. Processed Image as input for CNN (Resnet-18)
 4. CNN -> LSTM
 5. Use output from LSTM to generate result captions<br>
-link to the notebook [here](https://github.com/ChenjiaGUO/image_caption/blob/main/DL_Final.ipynb).
+
+Link to the notebook [here](https://github.com/ChenjiaGUO/image_caption/blob/main/DL_Final.ipynb).
+Link to the [helper](https://github.com/ChenjiaGUO/image_caption/blob/main/helper.py) functions and [model](https://github.com/ChenjiaGUO/image_caption/blob/main/model.py) files.
 ## Result
 <img width="415" alt="result" src="https://user-images.githubusercontent.com/86633319/176597505-51d736b5-db9e-48c7-a112-710e64f5d18f.png"> <br>
 > Average Log Loss: 3.3332 after a few epochs

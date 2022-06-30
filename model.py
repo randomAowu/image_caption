@@ -41,6 +41,7 @@ class FlickrDataset(Dataset):
 
         image = T.Compose([
             T.Resize((224, 224)),
+            T.RandomHorizontalFlip(),
             T.ToTensor()
             ])(image)
         caption = torch.tensor(self.caption[idx]).long()

@@ -25,10 +25,23 @@ Link to the [helper](https://github.com/ChenjiaGUO/image_caption/blob/main/helpe
 <img width="415" alt="result" src="https://user-images.githubusercontent.com/86633319/176597505-51d736b5-db9e-48c7-a112-710e64f5d18f.png"> <br>
 > Average Log Loss: 3.3332 after a few epochs
 ## Summary
+### Issues
+- Model can only use words in the vocab it trains on
+- Loss function only penalize for getting the words wrong. There is no meaning retention
+- Can not work with grammar
+- Need more epochs (Research groups norally take days to train their models)
+### Future Steps
+- Increase LSTM layering
+- Add in attention
+- Use subwords tokenizers
+- Train for more epochs
+- Use different loss function, for example BLEU, or embedding comparisons
 ## Discussions
 Some other implementions using captions could be:<br>
 - Given a sentence/query, find out the matching images.
 - Object detection
+## Slides
+Our [Slides]() for the final presentation
 
 ## Requirements
 Python==3.7.13  

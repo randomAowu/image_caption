@@ -28,13 +28,13 @@ Some other implementions using captions could be:<br>
 - Object detection
 
 ## Requirements
-Python==3.7.13
-jupyter==1.0.0
-matplotlib==3.2.2
-numpy==1.21.6
-pandas==1.3.5
-Pillow==7.1.2
-spacy==3.3.1
-torch @ https://download.pytorch.org/whl/cu113/torch-1.11.0%2Bcu113-cp37-cp37m-linux_x86_64.whl
-torchaudio @ https://download.pytorch.org/whl/cu113/torchaudio-0.11.0%2Bcu113-cp37-cp37m-
-tqdm==4.64.0
+Python==3.7.13  
+jupyter==1.0.0  
+matplotlib==3.2.2  
+numpy==1.21.6  
+pandas==1.3.5  
+Pillow==7.1.2  
+spacy==3.3.1  
+torch @ https://download.pytorch.org/whl/cu113/torch-1.11.0%2Bcu113-cp37-cp37m-linux_x86_64.whl  
+torchaudio @ https://download.pytorch.org/whl/cu113/torchaudio-0.11.0%2Bcu113-cp37-cp37m-  
+tqdm==4.64.0  

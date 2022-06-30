@@ -1,8 +1,9 @@
-# Image_caption
-Final project for DL Summer22
+# Image Caption
+
 ## Description
 Image caption referes to the process of describing an image using a sentence. By asking computers to generate captions based on input image, we may find ways to improve life quality for those with visual impairment. In addition, with image caption we could also build and optimize the search engine for image content. <br><br>
-In this project, we build and use a CNN-RNN model to automatically generate descriptions.<br>
+
+For our final project for DL Summer '22, we build and use a CNN-RNN model to automatically generate descriptions.<br>
 
 > CNN-RNN model: The image is encoded into a context vector by a CNN which can then be passed to a RNN decoder [^1]
 ![This is an image](https://miro.medium.com/max/1400/0*Z0KrVxXpDqTacrsF.)

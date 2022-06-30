@@ -13,7 +13,13 @@ import matplotlib.pyplot as plt
 nlp = spacy.load('en_core_web_sm', disable=['ner', 'parser', 'senter', 'tok2vec'])
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
+
 def get_df(CAPTIONS_PATH, IMG_DIR_PATH, sample=True):
+    """
+    Download and then preprocess texts from the caption dataset. 
+    Extract the filename, caption, and caption version from the text. 
+    If the sample boolean is True then create a subset according to the existing images.
+    """
     with open(CAPTIONS_PATH) as f:
         texts = f.readlines()
 
@@ -42,6 +48,7 @@ def train_test_split(df, ratio=0.7):
 def generate_vocabulary(series, threshold=4):
     """
     Takes in a pandas series datatype and creates two vocabulary sets. 
+    Returns a cleaned version of the text using the tokenizer from Spacy.
     """
     vocab2idx = {"<PAD>": 0, "<SOS>": 1, "<EOS>": 2, "<UNK>": 3}
     idx2vocab = {0: "<PAD>", 1: "<SOS>", 2: "<EOS>", 3: "<UNK>"}
@@ -66,6 +73,11 @@ def generate_vocabulary(series, threshold=4):
 
 
 def func(model, optimizer, dl, update=True, vocab_len=1, batch_size=5):
+    """
+    Training and evaluation function for the full model.
+    Reshaping and ignore index are needed for compatability issues.
+    Batch size 1 does not work with this set up with Pytorch.
+    """
     model.train() if update else model.eval()
     samples, total_loss = 0, 0
 
@@ -88,6 +100,11 @@ def func(model, optimizer, dl, update=True, vocab_len=1, batch_size=5):
 
 
 def make_prediction(model, image_path):
+    """
+    Using a temporary local model, make a text prediction for the image. 
+    The shapes are all different from the existing model, so the pipeline is rebuilt here.
+    Iteration limit is at 50 since the model was trained with that as a maximum.
+    """
     model = model.to('cpu')
     img = Image.open(image_path).convert('RGB')
     img = T.Compose([
@@ -118,6 +135,8 @@ def make_prediction(model, image_path):
     print(" ".join([idx2vocab.get(idx) for idx in output_ind]))
 
 
+
+# Set of temporary functions to translate captions to tokens and tokens to captions.
 def func1(caption):
     print([idx2vocab.get(idx) for idx in caption.view(-1).numpy()])
 

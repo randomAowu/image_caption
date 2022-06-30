@@ -8,8 +8,6 @@ import torchvision.models as models
 import torchvision.transforms as T
 from PIL import Image
 
-import pandas as pd
-
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 
@@ -100,6 +98,10 @@ class RNN(nn.Module):
 
 
 class FullModel(nn.Module):
+    """
+    The model combines the CNN and RNN structure. 
+    The shapes are managed and specified within each of the models. 
+    """
     def __init__(self, cnn_emb_size, rnn_emb_size, vocab_size, batch_size):
         super(FullModel, self).__init__()
         self.cnn = CNN(cnn_emb_size).to(device)
